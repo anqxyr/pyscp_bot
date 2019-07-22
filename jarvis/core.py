@@ -201,6 +201,11 @@ def dispatcher(inp):
     name is used, or returning a disambiguation prompt if multiple commands
     match the partial input.
     """
+    inst = db.Ignored.find_one(user=inp.whatever)
+    if inst:
+        # This user is being ignored.
+        return
+    
     funcs = collections.OrderedDict()
 
     command = _get_command_func(inp)
