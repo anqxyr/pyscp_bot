@@ -243,6 +243,9 @@ gibber:
     say: "{{ text }}"
     no_such_user: Haven't seen them.
     small_sample: The sample is not large enough to construct a text model.
+ignore:
+    ignoring: I will now ignore anything said by {user}.
+    unignoring: No longer ignoring {user}.
 ###############################################################################
 # SCP
 ###############################################################################
