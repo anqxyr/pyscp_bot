@@ -136,7 +136,7 @@ class ChannelConfig(BaseModel):
 class Ignored(BaseModel):
     """Database Ignored Users Table."""
 
-    user = peewee.CharField(index=True)
+    user = peewee.CharField(index=True, unique=True)
 
 
 ###############################################################################
