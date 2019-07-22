@@ -133,6 +133,12 @@ class ChannelConfig(BaseModel):
     gibber = peewee.BooleanField(null=True)
 
 
+class Ignored(BaseModel):
+    """Database Ignored Users Table."""
+
+    user = peewee.CharField(index=True)
+
+
 ###############################################################################
 
 
@@ -150,5 +156,5 @@ def init(path):
 
     db.connect()
     db.create_tables([
-        Tell, Message, Quote, Memo,
-        Subscriber, Restricted, Alert, ChannelConfig], safe=True)
+        Tell, Message, Quote, Memo, Subscriber,
+        Restricted, Alert, ChannelConfig, Ignored], safe=True)
