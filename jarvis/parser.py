@@ -1263,4 +1263,17 @@ def configure(pr):
             type=bool_string,
             help="""New value of the configured parameter.""")
 
+
+###############################################################################
+# Ignore
+###############################################################################
+
+
+@parser
+def ignore(pr):
+    pr.add_argument(
+        'user',
+        type=str.lower,
+        help="""IRC nick of the user to ignore/unignore.""")
+
     ###########################################################################
