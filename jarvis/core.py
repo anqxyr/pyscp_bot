@@ -201,7 +201,7 @@ def dispatcher(inp):
     name is used, or returning a disambiguation prompt if multiple commands
     match the partial input.
     """
-    inst = db.Ignored.find_one(user=inp.whatever)
+    inst = db.Ignored.find_one(user=inp.user)
     if inst:
         # This user is being ignored.
         return
