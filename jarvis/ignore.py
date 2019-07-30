@@ -17,6 +17,8 @@ db.init('jarvis.db')
 @core.command
 @parser.ignore
 def ignore(inp, *, user):
+    if not user:
+        return lex.ignore.no_user
     inst = db.Ignored.find_one(user=user)
     if inst:
         db.Ignored.purge(user=user)
