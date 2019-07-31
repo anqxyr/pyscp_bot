@@ -15,12 +15,13 @@ db.init('jarvis.db')
 ###############################################################################
 
 @core.command
+@core.require(channel=core.config.irc.sssc)
 @parser.ignore
 def ignore(inp, *, user):
     inst = db.Ignored.find_one(user=user)
     if inst:
         db.Ignored.purge(user=user)
-        return lex.ignore.unignored(user=user)
+        return lex.ignore.unignoring(user=user)
     else:
         db.Ignored.create(user=user)
-        return lex.ignore.ignored(user=user)
+        return lex.ignore.ignoring(user=user)
