@@ -75,8 +75,8 @@ gibber:
 # Ignore
 ###############################################################################
 ignore:
-    ignoring: I will now ignore anything said by {user}.
-    unignoring: No longer ignoring {user}.
+    ignoring: I will now ignore anything said by {{ user }}.
+    unignoring: No longer ignoring {{ user }}.
 ###############################################################################
 # SCP
 ###############################################################################
